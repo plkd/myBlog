@@ -1,10 +1,10 @@
 <template>
-<div>Login!</div>
+
 </template>
 
 <script>
   export default {
-    name: "login"
+    name: "not-found"
   }
 </script>
 

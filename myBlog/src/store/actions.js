@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import api from '../api'
-import router from './router'
+import router from '../router'
 import MsgAlert from './MsgAlert'
 import {SHOW_PROGRESS, USER_REG, USER_SIGNIN, USER_SIGNOUT} from "./types";
 
 export default {
-  //后台注册
+  // 后台注册
   UserReg({commit}, data) {
     api.localReg(data).then(data => {
       if (data.code === 200) {
@@ -18,7 +18,7 @@ export default {
       MsgAlert(err.toString())
     })
   },
-  //后台登录
+  //  后台登录
   UserLogin({commit}, data) {
     api.localLogin(data).then(data => {
       if (data.code === 200) {
@@ -27,12 +27,12 @@ export default {
         MsgAlert(data.message)
       }
     }).catch(err => {
-      MsgAlert((err.toString()))
+      MsgAlert(err.toString())
     })
   },
-  UserLogout({commit}){
+  UserLogout({commit}) {
     commit('USER_SIGNOUT');
-    router.push({path:'/login'})
+    router.push({path: '/login'})
   },
   showProgress({commit}, number) {
     commit('SHOW_PROGRESS', number)

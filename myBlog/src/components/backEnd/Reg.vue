@@ -4,8 +4,8 @@
 
 <script>
   export default {
-    name: "reg"
-  }
+    name: 'reg'
+  };
 </script>
 
 <style scoped>
