@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-row>
-      <el-col :span="24">
+      <el-col :span="24" class="btn-class">
         <el-button size="small" type="primary" @click="addClass">创建分类</el-button>
       </el-col>
     </el-row>

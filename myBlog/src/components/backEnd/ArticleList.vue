@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-row>
-      <el-col :span="24">
+      <el-col :span="24" class="btn-class">
         <el-button size="small" type="primary" @click="createArticle">创建文章</el-button>
       </el-col>
     </el-row>
@@ -106,5 +106,9 @@
 </script>
 
 <style scoped>
+  .page {
+    padding: 10px;
+    background: #fff;
+  }
 
 </style>

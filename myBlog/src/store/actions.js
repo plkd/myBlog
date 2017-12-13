@@ -22,7 +22,8 @@ export default {
   UserLogin({commit}, data) {
     api.localLogin(data).then(({data}) => {
       if (data.code === 200) {
-        commit('USER_SIGNIN', data.token)
+        commit('USER_SIGNIN', data.token);
+        router.replace({ path: '/admin/articleList'});
       } else {
         MsgAlert(data.message)
       }

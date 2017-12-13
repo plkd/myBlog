@@ -4,11 +4,11 @@
       <el-col :span='23' class="panel-top" :push="1">
         <!-- push就是相对定位了 -->
         <!--  offset设置的是margin-lef-->
-        <el-col :span="20" style='font-size:26px'>
+        <el-col :span="20" style='font-size:26px;text-align: left;'>
           <span>AD<i style="color:#20a0ff">MIN</i></span>
         </el-col>
         <el-col :span='4' class='rightbar'>
-          <el-dropdown >
+          <el-dropdown trigger="click">
               <span class="el-dropdown-link" style="color:#c0ccda;cursor: pointer;font-weight:700">
                 更多操作<i class="el-icon-caret-bottom el-icon--right"></i>
               </span>
@@ -21,13 +21,15 @@
       </el-col>
     </el-row>
     <!-- 顶部导航结束 -->
-    <el-row  class="panel-center">
+    <el-row class="panel-center">
       <el-col :span="5">
-        <el-menu  theme="dark"  router :default-active="currentPath">
+        <el-menu theme="dark" router :default-active="currentPath">
           <template v-for="(item,index) in $router.options.routes" v-if='!item.hidden'>
             <el-submenu :index="index+''">
-              <template slot="title"><i :class="item.iconCls" ></i>{{item.name}}</template>
-              <el-menu-item v-for="child in item.children" :index="item.path+'/'+child.path" :key="child.id" v-if="!child.hidden">{{child.name}}</el-menu-item>
+              <template slot="title"><i :class="item.iconCls"></i>{{item.name}}</template>
+              <el-menu-item v-for="child in item.children" :index="item.path+'/'+child.path" :key="child.id"
+                            v-if="!child.hidden">{{child.name}}
+              </el-menu-item>
             </el-submenu>
           </template>
         </el-menu>
@@ -58,8 +60,8 @@
     data() {
       return {
         currentPath: '/admin/articleList',
-        currentPathNameParent: '文章管理',
-        currentPathName: '文章列表'
+        currentPathNameParent: '管理面板',
+        currentPathName: '文章管理'
       }
     },
     methods: {
@@ -77,10 +79,56 @@
 
         })
       }
+    },
+    watch: {
+      "$route"(to, from) {
+        this.currentPath = to.path; // 变成绝对路径
+        this.currentPathNameParent = to.matched[0].name; // 根级路由的name
+        this.currentPathName = to.name // 匹配的完整的带子路由的name
+      }
     }
+
   }
 </script>
 
 <style scoped>
+  .panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: #286385;
+  }
+
+  .panel-top {
+    height: 60px;
+    line-height: 60px;
+    background: #286385;
+    color: #c0ccda;
+  }
+
+  .panel-center {
+    background: #1A4C85;
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .breadcrumb {
+    margin-bottom: 15px;
+  }
+
+  .panel-c-c {
+    background: #f1f2f7;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    padding: 30px;
+  }
+
 
 </style>

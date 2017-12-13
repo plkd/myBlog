@@ -28,7 +28,7 @@
             <!--展示区-->
             <el-col :span="12">
               <div v-html="markedToHtml"
-                   style="background: #fff;margin: 0 0 0 20px;height: 560px; overflow-y: auto"></div>
+                   style="background: #fff;margin: 0 0 0 20px;height: 537px; overflow-y: auto"></div>
             </el-col>
           </el-row>
           <el-form-item>
