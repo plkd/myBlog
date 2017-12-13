@@ -35,8 +35,34 @@ export default {
   localLogin(data) {
     return axios.post('/api/login', data);
   },
+  createArticle(param) {
+    return instance.post('/api/article/create', param)
+  },
   // 获取文章列表{带分页获取}
   getArticleList(data) {
-    return instance.post('/api/article/list', data);
+    return instance.post('/api/article/lists', data);
+  },
+  removeOneArticle(id) {
+    return instance.post('/api/article/remove', id)
+  },
+  updateArticle(data) {
+    return instance.post('/api/article/update', data)
+  },
+  // 根据id获取文章，后台，带权限
+  getOneArticle(data) {
+    return instance.post('/api/article/adminGetOnePost', data)
+  },
+  getClassify() {
+    return instance.get('/api/classify/lists')
+  },
+  removeOneClassify(id) {
+    return instance.post('/api/classify/remove', id)
+  },
+  createClassify(param) {
+    return instance.post('/api/classify/create', param)
+  },
+  editClassify(param) {
+    return instance.post('/api/classify/update', param)
   }
+
 };

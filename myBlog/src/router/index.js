@@ -33,4 +33,4 @@ router.beforeEach(({meta, path}, from, next) => {
   }
   next();
 });
-export default routes;
+export default router;

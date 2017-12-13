@@ -7,9 +7,9 @@ import {SHOW_PROGRESS, USER_REG, USER_SIGNIN, USER_SIGNOUT} from "./types";
 export default {
   // 后台注册
   UserReg({commit}, data) {
-    api.localReg(data).then(data => {
+    api.localReg(data).then(({data}) => {
       if (data.code === 200) {
-        commit('USER_REG', data.token)
+        commit('USER_REG', data.token);
         router.replace({path: '/admin'})
       } else {
         MsgAlert(data.message)
@@ -20,7 +20,7 @@ export default {
   },
   //  后台登录
   UserLogin({commit}, data) {
-    api.localLogin(data).then(data => {
+    api.localLogin(data).then(({data}) => {
       if (data.code === 200) {
         commit('USER_SIGNIN', data.token)
       } else {
