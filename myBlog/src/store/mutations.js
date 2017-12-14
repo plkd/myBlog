@@ -15,5 +15,8 @@ export default {
   },
   [SHOW_PROGRESS](state, number) {
     state.progress = number;
+  },
+  [HEAD_LINE](state, headline) {
+    state.headline = headline
   }
 }

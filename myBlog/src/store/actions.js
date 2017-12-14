@@ -37,5 +37,8 @@ export default {
   },
   showProgress({commit}, number) {
     commit('SHOW_PROGRESS', number)
+  },
+  changeHeadline({commit}, headline) {
+    commit('HEAD_LINE', headline)
   }
 }

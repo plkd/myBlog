@@ -42,6 +42,9 @@ export default {
   getArticleList(data) {
     return instance.post('/api/article/lists', data);
   },
+  getArticleLists(data) {
+    return frontInstance.post('/api/article/articleLists', data);
+  },
   removeOneArticle(id) {
     return instance.post('/api/article/remove', id)
   },
@@ -51,6 +54,10 @@ export default {
   // 根据id获取文章，后台，带权限
   getOneArticle(data) {
     return instance.post('/api/article/adminGetOnePost', data)
+  },
+  // 前台查询一篇文章,无权限
+  getOneArticleNoAuth(data) {
+    return frontInstance.post('/api/article/onePost', data)
   },
   getClassify() {
     return instance.get('/api/classify/lists')

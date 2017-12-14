@@ -81,6 +81,7 @@
       }
     },
     watch: {
+      // eslint-disable-next-line
       "$route"(to, from) {
         this.currentPath = to.path; // 变成绝对路径
         this.currentPathNameParent = to.matched[0].name; // 根级路由的name
