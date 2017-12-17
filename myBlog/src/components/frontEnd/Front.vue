@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <vhead class="head"></vhead>
-    <router-view></router-view>
+    <router-view class="content"></router-view>
     <vfoot class="foot"></vfoot>
   </div>
 </template>
@@ -28,5 +28,17 @@
 </script>
 
 <style scoped>
+  .wrapper{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction:column;
+    height: 100%;
+
+    /*overflow: scroll;*/
+  }
+  .head,.foot{
+    flex:0 0 auto;
+  }
 
 </style>
