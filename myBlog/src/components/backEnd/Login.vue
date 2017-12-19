@@ -58,8 +58,30 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .el-form-item{
     text-align: center;
+  }
+  .container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    min-width: 680px;
+    background: url(../../assets/img/login-bg.jpg) no-repeat center /cover;
+  }
+  .title{
+    text-align: center;
+    font-size: 2rem;
+  }
+  .reg_form{
+    width: 350px;
+    margin: 160px auto 0 auto;
+    border: 2px solid #8492A6;
+    padding: 25px;
+    border-radius: 5px;
+    background: rgba(255,255,255,.3);
   }
 </style>

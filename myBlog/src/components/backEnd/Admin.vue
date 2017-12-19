@@ -23,7 +23,7 @@
     <!-- 顶部导航结束 -->
     <el-row class="panel-center">
       <el-col :span="5">
-        <el-menu theme="dark" router :default-active="currentPath">
+        <el-menu background-color="#324057" text-color="#fff" style="border-right: 0;" router :default-active="currentPath">
           <template v-for="(item,index) in $router.options.routes" v-if='!item.hidden'>
             <el-submenu :index="index+''">
               <template slot="title"><i :class="item.iconCls"></i>{{item.name}}</template>
@@ -98,18 +98,18 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    background: #286385;
+    background: #1F2D3D;
   }
 
   .panel-top {
     height: 60px;
     line-height: 60px;
-    background: #286385;
+    background: #1F2D3D;
     color: #c0ccda;
   }
 
   .panel-center {
-    background: #1A4C85;
+    background: #324057;
     position: absolute;
     top: 60px;
     bottom: 0;
