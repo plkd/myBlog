@@ -60,4 +60,10 @@
     font-size: 1.6rem;
     line-height: 1.6em;
   }
+
+  @media screen and (max-width: 786px) {
+    article{
+      padding: .5rem 0;
+    }
+  }
 </style>

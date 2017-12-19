@@ -87,7 +87,11 @@
   }
 
   .tags-title {
-    font-size: 2.6rem;
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #404040;
+    padding: 1rem 0;
   }
 
   .tags-createdAt{
@@ -96,21 +100,31 @@
     font-size: 1.8rem;
     color: #7f8c8d;
   }
-
+  article{
+    border-bottom: 1px solid #d2d2d2;
+  }
+  footer{
+    margin-bottom: 1rem;
+  }
   .tags-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 0;
-    li {
-      margin: 5px 10px;
+    li{
+      margin: .4rem;
+      a{
+        display: block;
+      }
     }
   }
   .tags-readMore{
-    font-size: 2rem;
-    color:#919191;
-    font-weight: 600;
     text-align: right;
+    font-size: 2rem;
+    font-weight: 600;
+    a{
+      color:#919191;
+    }
   }
 
   .tag-btn {
@@ -137,5 +151,23 @@
   .active {
     background: #555555;
     color: #fff;
+  }
+
+  @media screen and (max-width: 786px){
+    .tags-title{
+      font-size: 2rem;
+    }
+    .tags-readMore{
+      font-size: 1.4rem;
+    }
+    .tags-list li{
+      margin: .2rem;
+      a{
+        font-size: 1.4rem;
+      }
+    }
+    .tag-wrap{
+      padding: 0;
+    }
   }
 </style>

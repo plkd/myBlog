@@ -108,4 +108,10 @@
     font-size: 4rem;
     font-weight: 400;
   }
+  @media screen and (max-width: 786px) {
+    header, .bg{
+      height: 25rem;
+    }
+
+  }
 </style>

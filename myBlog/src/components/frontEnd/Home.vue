@@ -13,7 +13,7 @@
       </header>
       <section class="home-main" v-html="item.contentToMark"></section>
       <footer>
-        <router-link class="home-readMore" :to="{path: `/article/${item._id}`}">阅读全文</router-link>
+        <router-link class="home-readMore" :to="{path: `/article/${item._id}`}">阅读全文>></router-link>
       </footer>
     </article>
     <footer class="loadMore" v-if="loadMoreShow">
@@ -140,5 +140,21 @@
   }
   .home-readMore:hover{
     opacity: 0.6;
+  }
+  @media screen and (max-width: 786px) {
+    .home-wrapper{
+      padding: .5rem 0;
+    }
+    .home-readMore{
+      font-size: 1.4rem;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .home-main{
+      font-size: 1.4rem;
+    }
+    .home-title{
+      font-size: 2.2rem;
+    }
   }
 </style>
