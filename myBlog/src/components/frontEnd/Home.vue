@@ -83,8 +83,10 @@
     margin:0;
   }
   .home-wrapper{
+    width: 80%;
     margin:auto;
-    list-style: none;
+    padding: 2rem;
+    max-width: 800px;
   }
   .home-wrapper article{
     padding-bottom: 1rem;

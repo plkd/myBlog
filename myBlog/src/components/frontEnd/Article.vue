@@ -38,6 +38,9 @@
 <style scoped>
   article{
     margin: auto;
+    width: 80%;
+    max-width: 800px;
+    padding: 2rem;
   }
   .home-title{
     font-size: 3rem;

@@ -19,8 +19,8 @@
           </div>
         </header>
         <section v-html="item.contentToMark" class="tags-main"></section>
-        <footer>
-          <router-link class="tags-readMore" :to="{path: `/article/${item._id}`}">阅读全文>></router-link>
+        <footer class="tags-readMore">
+          <router-link  :to="{path: `/article/${item._id}`}">阅读全文>></router-link>
         </footer>
       </article>
     </transition-group>
@@ -80,22 +80,44 @@
 <style scoped lang="scss">
   .tag-wrap {
     width: 80%;
+    max-width: 800px;
     margin: auto;
+    padding: 2rem;
+    font-size: 1.6rem;
+  }
+
+  .tags-title {
+    font-size: 2.6rem;
+  }
+
+  .tags-createdAt{
+    font-family: "Comic Sans MS", curslve, sans-serif;
+    padding: 0.6rem 0;
+    font-size: 1.8rem;
+    color: #7f8c8d;
   }
 
   .tags-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0;
     li {
       margin: 5px 10px;
     }
+  }
+  .tags-readMore{
+    font-size: 2rem;
+    color:#919191;
+    font-weight: 600;
+    text-align: right;
   }
 
   .tag-btn {
     color: rgba(0, 0, 0, 0.8);
     background: #f7f7f7;
     font-size: 1.8rem;
-    padding: .3rem 1rem;
+    padding: .6rem 1.5rem;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     -ms-transition: all 0.4s;
@@ -106,10 +128,13 @@
     -moz-border-radius: 5px;
     border-radius: 8px;
     border: 1px solid #d2d2d2;
-
+    &:hover{
+      background: #555555;
+      color: #fff;
+    }
   }
 
-  .active{
+  .active {
     background: #555555;
     color: #fff;
   }
