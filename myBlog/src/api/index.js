@@ -59,6 +59,14 @@ export default {
   getOneArticleNoAuth(data) {
     return frontInstance.post('/api/article/onePost', data)
   },
+  // 前台根据分类查询所有文章
+  getArticlesByClassify(data) {
+    return frontInstance.post('/api/article/noAuthArtilcelists', data)
+  },
+  // 前台获取所有分类
+  getNoAuthClass() {
+    return frontInstance.get('/api/classify/noAuthList')
+  },
   getClassify() {
     return instance.get('/api/classify/lists')
   },
